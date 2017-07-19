@@ -2,4 +2,17 @@
 
 <h1>articles</h1>
 
+<div class="list-group">
+    <% articles.forEach(function(article) { %>
+    <a href="/article/<%= article._id %>" class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1"><%= article.title %></h5>
+            <small><%= article.publishDate %></small>
+        </div>
+        <p class="mb-1"><%= article.content %></p>
+        <small>Writen by <%= article.author.username %></small>
+    </a>
+    <% }) %>
+</div>
+
 <% include layout/footer %>

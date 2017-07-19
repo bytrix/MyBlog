@@ -10,7 +10,8 @@ var article = require('./controllers/article');
 var user = require('./controllers/user');
 
 router.get('/', article.list);
-router.get('/user/:id', user.detail);
+// router.get('/user/:id', user.detail);
+router.get('/user', user.detail);
 
 router.get('/signin', sign.showSignin);
 router.post('/signin', sign.signin);

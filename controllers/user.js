@@ -9,8 +9,12 @@ var mongoose = require('mongoose');
 
 exports.detail = function (req, res, next) {
     // console.log(req.params.id);
-    User.findOne({_id: req.params.id}).then(function (user) {
-        Article.find().sort({_id:-1}).then(function (articles) {
+    if (req.session.user == null) {
+        res.status(404).end('Sorry, we can\'t fetch that page');
+        return;
+    }
+    User.findOne({_id: req.session.user._id}).then(function (user) {
+        Article.find({author_id: user._id}).sort({_id:-1}).then(function (articles) {
             // console.log(articles);
             // console.log(Article.getCompleteArticle(mongoose.Schema.ObjectId('596f22a3d6d1543ca6504b02')));
             // res.render('user', {articles: articles});
@@ -29,7 +33,5 @@ exports.detail = function (req, res, next) {
             console.log(articles);
             res.render('user', {articles: articles});
         });
-    }, function (err) {
-        res.status(404).end(err.message);
     });
 };

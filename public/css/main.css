@@ -30,4 +30,8 @@ a, input {
 
 footer {
     margin-top: 36px;
+    position: fixed;
+    bottom: 0px;
+    padding: 48px;
+    /*color: #666;*/
 }
