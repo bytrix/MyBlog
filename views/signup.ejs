@@ -1,0 +1,21 @@
+<% include layout/header %>
+
+
+<form action="signup" method="post" class="form-md">
+    <h1>Sign up</h1>
+    <div class="form-group">
+        <input type="text" name="username" placeholder="Username" class="form-control form-control-lg"/>
+    </div>
+    <div class="form-group">
+        <input type="password" name="password" placeholder="Password" class="form-control form-control-lg"/>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Sign up" class="btn btn-primary btn-block btn-lg"/>
+        <a href="/signin" class="btn btn-secondary btn-block btn-lg">Sign in</a>
+    </div>
+    <% if (typeof message != 'undefined') { %>
+        <div class="alert alert-danger"><%= message %></div>
+    <% } %>
+</form>
+
+<% include layout/footer %>

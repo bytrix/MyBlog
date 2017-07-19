@@ -1,0 +1,33 @@
+@import url('bootstrap.css');
+
+form {
+    /*width: 350px;*/
+    margin: 0 auto;
+}
+.form-md {
+    width: 350px;
+}
+.form-lg {
+    width: 800px;
+}
+form>h1 {
+    margin-bottom: 24px;
+}
+
+.form-control::placeholder {
+    color: #636c7299;
+}
+
+a {
+    outline: none;
+}
+input[type='submit'] {
+    cursor: pointer;
+}
+a, input {
+    transition-duration: 0.4s;
+}
+
+footer {
+    margin-top: 36px;
+}
